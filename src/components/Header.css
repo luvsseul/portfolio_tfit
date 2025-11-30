@@ -1,0 +1,77 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: invert(1);
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+}

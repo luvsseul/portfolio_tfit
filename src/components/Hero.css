@@ -1,0 +1,126 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 180px;
+    background-color: #000;
+    overflow: hidden;
+    transition: padding 0.5s ease;
+}
+
+.hero-content {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    transition: all 0.5s ease;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    transition: margin 0.5s ease;
+}
+
+.hero-main-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    aspect-ratio: 6/5;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    filter: brightness(0.9);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-title-overlay {
+    position: absolute;
+    top: -12%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    mix-blend-mode: exclusion;
+    pointer-events: none;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: top 0.5s ease;
+}
+
+.hero-logo-img {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    filter: invert(1);
+    transition: width 0.5s ease;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 10;
+    transition: transform 0.5s ease;
+}
+
+.hero-text h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    transition: font-size 0.5s ease;
+}
+
+.subtitle {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--gray-text);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: font-size 0.5s ease;
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        padding-top: 140px;
+    }
+
+    .hero-main-image {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero-main-image {
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .hero-title-overlay {
+        top: -10%;
+    }
+
+    .hero-logo-img {
+        width: 40%;
+    }
+
+    .hero-text h2 {
+        letter-spacing: 4px;
+    }
+}
